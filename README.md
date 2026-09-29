@@ -114,3 +114,19 @@ RegCentral	TBD — confirm with the endpoint owner	Downstream recipient of the C
 ClientCentralData	TBD — confirm with the endpoint owner	Downstream recipient of the CANDERReport/ProductReport/UKProductReport/SingaporeReport output files and checksum markers
 
 ```
+
+```
+MS ID	Microservice Name	Type of Reuse	Microservice Provider (Country/Segment)
+MS-01	fenergo_service	New	Canada / GCO
+MS-02	polling_service	New	Canada / GCO
+MS-03	download_service	New	Canada / GCO
+MS-04	report_definition_service	New	Canada / GCO
+MS-05	template_reader	New	Canada / GCO
+MS-06	transformation_service	New	Canada / GCO
+MS-07	marker_service	New	Canada / GCO
+MS-08	delivery_service	New	Canada / GCO
+MS-09	sftp_connection_service	New	Canada / GCO
+MS-10	execution_service	New	Canada / GCO
+MS-11	reporting_orchestrator	New	Canada / GCO
+MS-12	CLI (app.cli)	New	Canada / GCO
+```
