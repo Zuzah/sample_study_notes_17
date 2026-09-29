@@ -93,3 +93,24 @@ def test_configure_logging_falls_back_to_base_dir_logs_when_audit_root_unset(mon
     finally:
         configure_logging()
 ```
+
+## Documentation
+
+```
+16.1.1.3 Middleware Description
+
+Service ID	Service Name	Functionality
+MW-01	Apache Airflow	Triggers/schedules this platform's run-report command; owns scheduling, monitoring, and retries for pipeline runs (per confirmed Airflow/platform boundary — Airflow handles orchestration only, all Fenergo-specific logic lives in the platform itself)
+MW-02	SFTP Delivery (paramiko)	Transports the finished report file and its SHA256 checksum marker from this platform to downstream landing zones over SSH/SFTP
+MW-03	Fenergo OAuth2/REST API Client	Authenticates (OAuth2 client_credentials) and exchanges data with Fenergo's Advanced Reporting API — submits the SQL/saved query, polls status, retrieves the presigned download URL
+```
+
+```
+16.1.1.4 Backend/Core Banking Description
+
+Program Name	Type	Functionality
+Fenergo (FenX Advanced Reporting API)	External SaaS vendor platform — KYC/client onboarding system of record	Source system. Executes the submitted SQL/saved query against its reporting datastore and returns the result set as a downloadable CSV
+RegCentral	TBD — confirm with the endpoint owner	Downstream recipient of the ChinaGTTReport output file and checksum marker
+ClientCentralData	TBD — confirm with the endpoint owner	Downstream recipient of the CANDERReport/ProductReport/UKProductReport/SingaporeReport output files and checksum markers
+
+```
